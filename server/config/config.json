@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "postgres",
-    "password": "postgres",
+    "password": "null",
     "database": "Currency_Watch_DB",
     "host": "localhost",
     "dialect": "postgres"
