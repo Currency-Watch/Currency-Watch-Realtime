@@ -35,13 +35,14 @@ class userController {
       }
     })
       .then(user => {
+
         if (!user) {
           next({ name: 'unauthorized' })
         }
 
         const match = comparePassword(loginObj.password, user.password)
         if (match) {
-          console.log(match);
+          // console.log(match);
           const payload = {
             id: user.id,
             email: user.email
@@ -55,7 +56,7 @@ class userController {
         // return res.status(200).json(user)
       })
       .catch(err => {
-        console.log(err);
+        // console.log(err.message);
         next(err)
       })
   }
