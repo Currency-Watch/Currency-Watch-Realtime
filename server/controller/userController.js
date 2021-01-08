@@ -59,7 +59,40 @@ class userController {
         // console.log(err.message);
         next(err)
       })
-  }
+    }
+
+    static getNews(req,res,next){
+      const options = {
+              method: 'GET',
+              url: 'https://apidojo-yahoo-finance-v1.p.rapidapi.com/news/list',
+              params: {category: 'generalnews', region: 'US'},
+              headers: {
+              'x-rapidapi-key': 'dfbdd7fbd9mshe00a75467674f9bp1c5c61jsn4b416ce1a4fb',
+              'x-rapidapi-host': 'apidojo-yahoo-finance-v1.p.rapidapi.com'
+              }
+          };
+
+      axios.request(options).then(response=>{
+      console.log(response.data.items.result)
+        res.status(200).json(response.data.items.result)
+      }).catch(err=>{
+        res.status(500).json(err)
+      });
+    }
+
+    static getRates(req,res,next){
+      const options = 'https://api.exchangeratesapi.io/latest?base=EUR'
+
+        axios.request(options)
+        .then(data=>{
+            console.log(data.data);
+            res.status(200).json(data.data)
+        })
+        .catch(err=>{
+            console.log(err);
+            res.status(500).json(err)
+        })
+    } 
   }
   
 

@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="google-signin-client_id" content="377768704545-v8vea0advs413kddoc6hc75u4e2e2467.apps.googleusercontent.com">
+
   <title>Login Template</title>
   <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
@@ -42,9 +44,10 @@
                     <input type="password" name="password" id="input-password" class="form-control" placeholder="***********">
                   </div>
                   <button id="btn-login" class="btn btn-block login-btn mb-4">Login</button>
+                  <div style="float: right;" class="g-signin2" data-onsuccess="onSignIn"></div>
                 </form>
                 <p class="login-card-footer-text">Don't have an account? <a href="#!" class="text-reset" id="btn-register">Register here</a></p>
-            </div>
+              </div>
           </div>
         </div>
       </div>
@@ -95,7 +98,8 @@
       <p></p>
     </div>
   </div>
-
+  
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
   <script src="./main.js"></script>

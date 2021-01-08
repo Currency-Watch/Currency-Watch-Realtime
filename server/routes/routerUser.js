@@ -3,7 +3,8 @@ const userController = require('../controller/userController.js')
 
 router.post('/register', userController.register)
 router.post('/login', userController.login)
-// router.get('/home', userController)
+router.get('/rates', userController.getRates)
+router.get('/news', userController.getNews)
 
 
 module.exports = router
