@@ -35,7 +35,7 @@ class userController {
       }
     })
       .then(user => {
-        // console.log(user)
+
         if (!user) {
           next({ name: 'unauthorized' })
         }
